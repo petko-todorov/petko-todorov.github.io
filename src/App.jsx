@@ -1,5 +1,5 @@
 import './App.css'
-import { useEffect } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -10,6 +10,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Certificates from './components/Certificates'
 import Contact from './components/Contact'
+import ChatBot from './components/ChatBot';
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
         });
     }, []);
 
+    const [modalOpen, setModalOpen] = useState(false);
+
     return (
         <>
             <Home />
@@ -30,6 +33,15 @@ function App() {
             <Projects />
             <Certificates />
             <Contact />
+
+            <button
+                className="fixed z-50 bottom-6 right-6 bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg"
+                onClick={() => setModalOpen(prev => !prev)}
+            >
+                💬 ChatBot
+            </button>
+
+            {modalOpen && <ChatBot />}
         </>
     )
 }
