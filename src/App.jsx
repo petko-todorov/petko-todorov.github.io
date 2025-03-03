@@ -12,6 +12,8 @@ import Certificates from './components/Certificates'
 import Contact from './components/Contact'
 import ChatBot from './components/ChatBot';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRobot } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
 
@@ -23,6 +25,8 @@ function App() {
     }, []);
 
     const [modalOpen, setModalOpen] = useState(false);
+    const [modalPosition, setModalPosition] = useState({ x: 0, y: 0 });
+
     const [messages, setMessages] = useState([
         { sender: "bot", text: "Hello! How can I help you today?" }
     ]);
@@ -39,10 +43,11 @@ function App() {
             <Contact />
 
             <button
-                className="fixed z-50 bottom-6 right-6 bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg"
+                className="fixed z-50 top-5 right-2 max-lg:left-2 max-lg:right-auto bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg"
                 onClick={() => setModalOpen(prev => !prev)}
             >
-                💬 ChatBot
+                <span className='lg:block max-lg:hidden'>💬 ChatBot</span>
+                <FontAwesomeIcon icon={faRobot} className="lg:hidden" />
             </button>
 
             {modalOpen && (
@@ -51,6 +56,9 @@ function App() {
                     setMessages={setMessages}
                     conversation={conversation}
                     setConversation={setConversation}
+                    setModalOpen={setModalOpen}
+                    modalPosition={modalPosition}
+                    setModalPosition={setModalPosition}
                 />
             )}
         </>
