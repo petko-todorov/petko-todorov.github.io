@@ -4,18 +4,28 @@ import botImage from '../assets/bot.jpg';
 import userImage from '../assets/user.jpg';
 import sendImage from '../assets/send.png';
 import loadingGif from '../assets/loading.gif';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY
 const TEXT = import.meta.env.VITE_CHAT_BOT_TEXT1 + import.meta.env.VITE_CHAT_BOT_TEXT2;
 
-function ChatBot({ messages, setMessages, conversation, setConversation }) {
+function ChatBot({
+    messages,
+    setMessages,
+    conversation,
+    setConversation,
+    setModalOpen,
+    modalPosition,
+    setModalPosition
+}) {
     const [input, setInput] = useState("");
     const [loading, setLoading] = useState(false);
 
     const nodeRef = useRef(null);
-
     const messagesEndRef = useRef(null);
+
     useEffect(() => {
         if (messagesEndRef.current) {
             messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
@@ -114,16 +124,26 @@ function ChatBot({ messages, setMessages, conversation, setConversation }) {
     };
 
     return (
-        <Draggable nodeRef={nodeRef} handle=".drag-handle">
+        <Draggable
+            nodeRef={nodeRef}
+            handle=".drag-handle"
+            position={{ x: modalPosition.x, y: modalPosition.y }}
+            onDrag={(e, data) => setModalPosition({ x: data.x, y: data.y })}
+        >
             <div
                 ref={nodeRef}
                 id="messages-container"
-                className="mx-auto mt-0 flex flex-col fixed bottom-20 right-10 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md h-[500px] bg-white p-0 rounded-3xl shadow-lg z-50"
+                className="mx-auto mt-0 flex flex-col fixed bottom-20 right-10 w-[90%] max-w-md h-[500px] bg-white p-0 rounded-3xl shadow-lg z-50 max-lg:top-28 max-lg:bottom-0 max-lg:left-0 max-lg:right-0"
             >
-                <div className="drag-handle cursor-pointer">
-                    <h1 className="text-xl font-bold m-3 text-center select-none">
+                <div className="drag-handle cursor-pointer flex justify-center items-center">
+                    <h1 className="text-xl font-bold m-3 select-none flex-grow text-center">
                         PersonalBot Chat
                     </h1>
+                    <FontAwesomeIcon
+                        onClick={() => setModalOpen(false)}
+                        onTouchStart={() => setModalOpen(false)}
+                        icon={faCircleXmark}
+                        className="text-red-500 text-3xl mr-6" />
                 </div>
                 <div className="overflow-y-auto flex-grow border p-2 rounded bg-gray-100">
                     {messages.map((msg, index) => (
