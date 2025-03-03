@@ -23,6 +23,10 @@ function App() {
     }, []);
 
     const [modalOpen, setModalOpen] = useState(false);
+    const [messages, setMessages] = useState([
+        { sender: "bot", text: "Hello! How can I help you today?" }
+    ]);
+    const [conversation, setConversation] = useState([]);
 
     return (
         <>
@@ -41,7 +45,14 @@ function App() {
                 💬 ChatBot
             </button>
 
-            {modalOpen && <ChatBot />}
+            {modalOpen && (
+                <ChatBot
+                    messages={messages}
+                    setMessages={setMessages}
+                    conversation={conversation}
+                    setConversation={setConversation}
+                />
+            )}
         </>
     )
 }

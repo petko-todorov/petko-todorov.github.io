@@ -9,13 +9,9 @@ import loadingGif from '../assets/loading.gif';
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY
 const TEXT = import.meta.env.VITE_CHAT_BOT_TEXT1 + import.meta.env.VITE_CHAT_BOT_TEXT2;
 
-function ChatBot() {
-    const [messages, setMessages] = useState([
-        { sender: "bot", text: "Hello! How can I help you today?" }
-    ]);
+function ChatBot({ messages, setMessages, conversation, setConversation }) {
     const [input, setInput] = useState("");
     const [loading, setLoading] = useState(false);
-    const [conversation, setConversation] = useState([]);
 
     const nodeRef = useRef(null);
 
