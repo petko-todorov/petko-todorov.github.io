@@ -26,7 +26,7 @@ function NavBar() {
 
     return (
         <>
-            <nav className="sticky top-0 bg-white z-50">
+            <nav className="sticky top-0 bg-white z-40">
                 <div className="md:hidden flex justify-end p-4 text-[#FFB21F]">
                     <Hamburger toggled={isOpen} toggle={setOpen} />
                 </div>
