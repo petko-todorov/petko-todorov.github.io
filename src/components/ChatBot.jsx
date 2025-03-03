@@ -25,12 +25,17 @@ function ChatBot({
 
     const nodeRef = useRef(null);
     const messagesEndRef = useRef(null);
-
+    const inputRef = useRef(null); 
+    
     useEffect(() => {
         if (messagesEndRef.current) {
             messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [messages]);
+
+    useEffect(() => {
+        inputRef.current?.focus();
+    }, [modalPosition]);
 
     const detectLanguage = (text) => {
         const englishRegex = /[a-zA-Z]/g;
@@ -177,6 +182,7 @@ function ChatBot({
                     >
                         <input
                             type="text"
+                            ref={inputRef}
                             className="flex-grow p-2 border rounded-xl"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
