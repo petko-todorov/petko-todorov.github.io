@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import Draggable from 'react-draggable';
+import botImage from '../assets/bot.jpg';
+import userImage from '../assets/user.jpg';
+import sendImage from '../assets/send.png';
+import loadingGif from '../assets/loading.gif';
+
 
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY
 const TEXT = import.meta.env.VITE_CHAT_BOT_TEXT1 + import.meta.env.VITE_CHAT_BOT_TEXT2;
@@ -130,7 +135,7 @@ function ChatBot() {
                             <div className={`flex items-start space-x-2 ${msg.sender === "user" ? "justify-end items-center" : "items-center"}`}>
                                 {msg.sender === "bot" ? (
                                     <>
-                                        <img src="./src/assets/bot.jpg" alt="Bot" className="w-10 h-10 rounded-full select-none" />
+                                        <img src={botImage} alt="Bot" className="w-10 h-10 rounded-full select-none" />
                                         <div
                                             dangerouslySetInnerHTML={{ __html: msg.text }}
                                         />
@@ -138,13 +143,13 @@ function ChatBot() {
                                 ) : (
                                     <>
                                         <span className="max-w-xs break-words">{msg.text}</span>
-                                        <img src="./src/assets/user.jpg" alt="User" className="w-10 h-10 rounded-full select-none" />
+                                        <img src={userImage} alt="User" className="w-10 h-10 rounded-full select-none" />
                                     </>
                                 )}
                             </div>
                         </div>
                     ))}
-                    {loading && <p className="flex items-center gap-1"><img src="./src/assets/loading.gif" alt="Loading" className="h-6 pb-0" /> Generating...</p>}
+                    {loading && <p className="flex items-center gap-1"><img src={loadingGif} alt="Loading" className="h-6 pb-0" /> Generating...</p>}
                     <div ref={messagesEndRef} />
                 </div>
 
@@ -162,7 +167,7 @@ function ChatBot() {
                             placeholder="Type a message..."
                         />
                         <button className="ml-0 px-4 py-2 text-white rounded" onClick={sendMessage}>
-                            <img src="./src/assets/send.png" alt="" className="w-6" />
+                            <img src={sendImage} alt="" className="w-6" />
                         </button>
                     </form>
                 </div>
