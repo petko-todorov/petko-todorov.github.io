@@ -25,8 +25,8 @@ function ChatBot({
 
     const nodeRef = useRef(null);
     const messagesEndRef = useRef(null);
-    const inputRef = useRef(null); 
-    
+    const inputRef = useRef(null);
+
     useEffect(() => {
         if (messagesEndRef.current) {
             messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
@@ -92,8 +92,7 @@ function ChatBot({
                                 role: "user",
                                 parts: [{
                                     text: `Стартирай на езика ${inputLanguage} и ако не е български преведи.
-                                    Ако е unknown преведи на езика от първата дума
-                                    също ако е число пиши на английски
+                                    Ако е unknown преведи на езика от първата дума, също ако е число и няма текст пиши на английски, ако има текст пиши на езика на който е написан текста.
                                     ${TEXT}`
                                 }]
                             },
