@@ -137,7 +137,7 @@ function ChatBot({
             <div
                 ref={nodeRef}
                 id="messages-container"
-                className="mx-auto mt-0 flex flex-col fixed bottom-20 right-10 w-[90%] max-w-md h-[500px] bg-white p-0 rounded-3xl shadow-lg z-50 max-lg:top-28 max-lg:bottom-0 max-lg:left-0 max-lg:right-0"
+                className="mx-auto mt-0 flex flex-col fixed top-40 right-32 w-[90%] max-w-md h-[500px] bg-white rounded-3xl shadow-lg z-50 max-lg:top-28 max-lg:bottom-0 max-lg:left-0 max-lg:right-0"
             >
                 <div className="drag-handle cursor-pointer flex justify-center items-center">
                     <h1 className="text-xl font-bold m-3 select-none flex-grow text-center">
