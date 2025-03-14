@@ -15,6 +15,8 @@ import ChatBot from './components/ChatBot';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRobot } from '@fortawesome/free-solid-svg-icons';
 
+import chatBotGif from '../src/assets/chatbot.gif';
+
 function App() {
 
     useEffect(() => {
@@ -28,39 +30,28 @@ function App() {
     const [modalPosition, setModalPosition] = useState({ x: 0, y: 0 });
 
     const [messages, setMessages] = useState([
-        { sender: "bot", text: "Hello! How can I help you today?" }
+        { sender: "bot", text: "Hello! 👋 I’m Petko’s virtual assistant. What would you like to know about him?" }
     ]);
     const [conversation, setConversation] = useState([]);
 
     return (
         <>
             <Home />
-            <NavBar />
+            <NavBar
+                modalOpen={modalOpen}
+                setModalOpen={setModalOpen}
+                modalPosition={modalPosition}   // ✅ Ensure these are passed
+                setModalPosition={setModalPosition}
+                messages={messages}
+                setMessages={setMessages}
+                conversation={conversation}
+                setConversation={setConversation}
+            />
             <AboutMe />
             <Skills />
             <Projects />
             <Certificates />
             <Contact />
-
-            <button
-                className="fixed z-50 top-5 right-2 max-lg:left-2 max-lg:right-auto bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg"
-                onClick={() => setModalOpen(prev => !prev)}
-            >
-                <span className='lg:block max-lg:hidden'>💬 ChatBot</span>
-                <FontAwesomeIcon icon={faRobot} className="lg:hidden" />
-            </button>
-
-            {modalOpen && (
-                <ChatBot
-                    messages={messages}
-                    setMessages={setMessages}
-                    conversation={conversation}
-                    setConversation={setConversation}
-                    setModalOpen={setModalOpen}
-                    modalPosition={modalPosition}
-                    setModalPosition={setModalPosition}
-                />
-            )}
         </>
     )
 }

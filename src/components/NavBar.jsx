@@ -1,8 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import Hamburger from 'hamburger-react'
+import chatBotGif from '../assets/chatbot.gif';
+import ChatBot from './ChatBot';
 
-function NavBar() {
+function NavBar({
+    modalOpen, setModalOpen,
+    modalPosition, setModalPosition,
+    messages, setMessages,
+    conversation, setConversation
+}) {
     const [activeSection, setActiveSection] = useState('home');
     const [isOpen, setOpen] = useState(false);
 
@@ -27,91 +34,99 @@ function NavBar() {
     return (
         <>
             <nav className="sticky top-0 bg-white z-40">
-                <div className="md:hidden flex justify-end p-4 text-[#FFB21F]">
+                <div className="md:hidden flex justify-between p-4 text-[#FFB21F]">
+                    <button
+                        className="text-white px-0 py-0 bg-transparent shadow-none select-none"
+                        onClick={() => setModalOpen(prev => !prev)}
+                    >
+                        <span className='lg:block max-lg:hidde'>
+                            <img src={chatBotGif} alt="Chatbot" className='w-10' />
+                        </span>
+                    </button>
                     <Hamburger toggled={isOpen} toggle={setOpen} />
                 </div>
+                
+                <ul className="hidden md:flex uppercase font-bold text-[#888888] flex-row justify-between items-center w-full h-20 mb-15 px-10">
+                    <div className="flex flex-1 justify-center gap-10">
+                        <li className={`hover:cursor-pointer select-none ${activeSection === 'home' ? 'text-[#FFB21F]' : ''}`}>
+                            <Link
+                                to="home"
+                                smooth={true}
+                                duration={700}
+                                offset={-70}
+                            >
+                                Home
+                            </Link>
+                        </li>
 
-                {/* <ul className="hidden md:flex uppercase font-bold text-[#888888] flex flex-row justify-center items-center gap-10 mb-15 h-20"> */}
-                <ul className="hidden md:flex uppercase font-bold text-[#888888] flex-row justify-center items-center gap-10 mb-15 h-20">
-                    <li
-                        className={`hover:cursor-pointer select-none ${activeSection === 'home' ? 'text-[#FFB21F]' : ''}`}
-                    >
-                        <Link
-                            to="home"
-                            smooth={true}
-                            duration={700}
-                            offset={-70}
-                        >
-                            Home
-                        </Link>
-                    </li>
-                    <li
-                        className={`hover:cursor-pointer select-none ${activeSection === 'about-me' ? 'text-[#FFB21F]' : ''}`}
-                    >
-                        <Link
-                            to="about-me"
-                            smooth={true}
-                            duration={700}
-                            offset={-70}
-                        >
-                            About me
-                        </Link>
-                    </li>
-                    <li
-                        className={`hover:cursor-pointer select-none ${activeSection === 'skills' ? 'text-[#FFB21F]' : ''}`}
-                    >
-                        <Link
-                            to="skills"
-                            smooth={true}
-                            duration={700}
-                            offset={-70}
-                        >
-                            Skills
-                        </Link>
-                    </li>
-                    <li
-                        className={`hover:cursor-pointer select-none ${activeSection === 'projects' ? 'text-[#FFB21F]' : ''}`}
-                    >
-                        <Link
-                            to="projects"
-                            smooth={true}
-                            duration={700}
-                            offset={-70}
-                        >
-                            Projects
-                        </Link>
-                    </li>
-                    <li
-                        className={`hover:cursor-pointer select-none ${activeSection === 'certificates' ? 'text-[#FFB21F]' : ''}`}
-                    >
-                        <Link
-                            to="certificates"
-                            smooth={true}
-                            duration={700}
-                            offset={-70}
-                        >
-                            Certificates
-                        </Link>
-                    </li>
-                    <li
-                        className={`hover:cursor-pointer select-none ${activeSection === 'contact' ? 'text-[#FFB21F]' : ''}`}
-                    >
-                        <Link
-                            to="contact"
-                            smooth={true}
-                            duration={700}
-                            offset={-70}
-                        >
-                            Contact
-                        </Link>
+                        <li className={`hover:cursor-pointer select-none ${activeSection === 'about-me' ? 'text-[#FFB21F]' : ''}`}>
+                            <Link
+                                to="about-me"
+                                smooth={true}
+                                duration={700}
+                                offset={-70}
+                            >
+                                About me
+                            </Link>
+                        </li>
+
+                        <li className={`hover:cursor-pointer select-none ${activeSection === 'skills' ? 'text-[#FFB21F]' : ''}`}>
+                            <Link
+                                to="skills"
+                                smooth={true}
+                                duration={700}
+                                offset={-70}
+                            >
+                                Skills
+                            </Link>
+                        </li>
+
+                        <li className={`hover:cursor-pointer select-none ${activeSection === 'projects' ? 'text-[#FFB21F]' : ''}`}>
+                            <Link
+                                to="projects"
+                                smooth={true}
+                                duration={700}
+                                offset={-70}
+                            >
+                                Projects
+                            </Link>
+                        </li>
+
+                        <li className={`hover:cursor-pointer select-none ${activeSection === 'certificates' ? 'text-[#FFB21F]' : ''}`}>
+                            <Link
+                                to="certificates"
+                                smooth={true}
+                                duration={700}
+                                offset={-70}
+                            >
+                                Certificates
+                            </Link>
+                        </li>
+
+                        <li className={`hover:cursor-pointer select-none ${activeSection === 'contact' ? 'text-[#FFB21F]' : ''}`}>
+                            <Link
+                                to="contact"
+                                smooth={true}
+                                duration={700}
+                                offset={-70}
+                            >
+                                Contact
+                            </Link>
+                        </li>
+                    </div>
+
+                    <li className="ml-auto">
+                        <button className="text-white py-0 bg-transparent select-none" onClick={() => setModalOpen(prev => !prev)}>
+                            <span className='lg:block'>
+                                <img src={chatBotGif} alt="Chatbot" className='w-11' />
+                            </span>
+                        </button>
                     </li>
                 </ul>
 
                 {/* hamburger */}
                 <ul className={`md:hidden ${isOpen ? 'flex' : 'hidden'} flex-col items-end px-6 pb-5 gap-6 text-[#888888] uppercase font-bold`}>
-                    <li
-                    // className={`hover:cursor-pointer select-none ${activeSection === 'home' ? 'text-[#FFB21F]' : ''}`}
-                    >
+                    <li>
                         <Link
                             to="home"
                             smooth={true}
@@ -122,9 +137,8 @@ function NavBar() {
                             Home
                         </Link>
                     </li>
-                    <li
-                    // className={`hover:cursor-pointer select-none ${activeSection === 'about-me' ? 'text-[#FFB21F]' : ''}`}
-                    >
+
+                    <li>
                         <Link
                             to="about-me"
                             smooth={true}
@@ -135,9 +149,8 @@ function NavBar() {
                             About me
                         </Link>
                     </li>
-                    <li
-                    // className={`hover:cursor-pointer select-none ${activeSection === 'skills' ? 'text-[#FFB21F]' : ''}`}
-                    >
+
+                    <li>
                         <Link
                             to="skills"
                             smooth={true}
@@ -148,9 +161,8 @@ function NavBar() {
                             Skills
                         </Link>
                     </li>
-                    <li
-                    // className={`hover:cursor-pointer select-none ${activeSection === 'projects' ? 'text-[#FFB21F]' : ''}`}
-                    >
+
+                    <li>
                         <Link
                             to="projects"
                             smooth={true}
@@ -161,9 +173,8 @@ function NavBar() {
                             Projects
                         </Link>
                     </li>
-                    <li
-                    // className={`hover:cursor-pointer select-none ${activeSection === 'certificates' ? 'text-[#FFB21F]' : ''}`}
-                    >
+
+                    <li>
                         <Link
                             to="certificates"
                             smooth={true}
@@ -174,9 +185,8 @@ function NavBar() {
                             Certificates
                         </Link>
                     </li>
-                    <li
-                    // className={`hover:cursor-pointer select-none ${activeSection === 'contact' ? 'text-[#FFB21F]' : ''}`}
-                    >
+
+                    <li>
                         <Link
                             to="contact"
                             smooth={true}
@@ -189,6 +199,18 @@ function NavBar() {
                     </li>
                 </ul>
             </nav>
+
+            {modalOpen && (
+                <ChatBot
+                    messages={messages}
+                    setMessages={setMessages}
+                    conversation={conversation}
+                    setConversation={setConversation}
+                    setModalOpen={setModalOpen}
+                    modalPosition={modalPosition}
+                    setModalPosition={setModalPosition}
+                />
+            )}
         </>
     );
 }
