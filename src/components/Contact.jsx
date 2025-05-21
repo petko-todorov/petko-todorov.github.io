@@ -66,7 +66,7 @@ function Contact() {
                     <img
                         src={footerGif}
                         alt=""
-                        data-aos="fade-left"
+                        data-aos="zoom-in"
                         className='w-[35%] max-sm:w-[70%] h-auto rounded-2xl'
                     />
                 </div>
