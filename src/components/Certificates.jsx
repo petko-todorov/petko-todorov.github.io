@@ -25,6 +25,7 @@ import angular from '../assets/certificates/small/angular.png';
 import angularFull from '../assets/certificates/full/Angular - February 2024 - Certificate.jpeg';
 import itCareerBoost from '../assets/certificates/small/it career boost.png';
 import itCareerBoostFull from '../assets/certificates/full/IT Career Booster - October 2023 - Certificate.jpeg';
+import BlurText from './effects/BlurText';
 
 function Certificates() {
     const certificates = [
@@ -110,12 +111,14 @@ function Certificates() {
 
     return (
         <section id="certificates" className="bg-[#333333]">
-            <h1
-                className="text-4xl text-white font-semibold text-center py-10 select-none"
-                data-aos="zoom-in"
-            >
-                Certificates
-            </h1>
+            <div className="flex justify-center">
+                <BlurText
+                    text="Certificates"
+                    animateBy="letters"
+                    delay={50}
+                    className="text-4xl text-white font-semibold text-center py-10 select-none"
+                />
+            </div>
 
             <div className="splide">
                 <div className="splide__track">

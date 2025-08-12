@@ -7,6 +7,7 @@ import basicRpgGameProject from '../assets/projects/basic_rpg_game_project.png';
 import weatherPythonProject from '../assets/projects/weather_python_project.png';
 import createNewPyJsFilesProject from '../assets/projects/make_new_file_project.png';
 import bullsAndCowsProject from '../assets/projects/bulls_and_cows_project.png';
+import BlurText from './effects/BlurText';
 
 function Projects() {
     const projects = [
@@ -61,12 +62,14 @@ function Projects() {
     return (
         <>
             <section id="projects">
-                <h1
-                    className="text-4xl text-black text-center py-12 select-none"
-                    data-aos="zoom-in"
-                >
-                    Projects
-                </h1>
+                <div className="flex justify-center">
+                    <BlurText
+                        text="Projects"
+                        animateBy="letters"
+                        delay={50}
+                        className="text-4xl text-black text-center py-12 select-none"
+                    />
+                </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                     {projects.map((project, index) => (

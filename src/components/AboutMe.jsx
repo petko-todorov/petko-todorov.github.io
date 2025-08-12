@@ -1,15 +1,16 @@
 import aboutImage from '../assets/about1.gif';
+import BlurText from './effects/BlurText';
 
 function AboutMe() {
     return (
         <>
             <section id="about-me" className="bg-[#969696] py-[6rem] w-auto">
-                <h1
-                    className="text-[#222222] text-5xl text-center pb-10 select-none"
-                    data-aos="fade-down"
-                >
-                    Who Am I
-                </h1>
+                <div className="flex justify-center">
+                    <BlurText
+                        text="Who Am I"
+                        className="text-[#222222] text-5xl pb-10 select-none"
+                    />
+                </div>
 
                 <div className="max-sm:w-11/12 max-md:w-[90%] max-lg:w-[95%] max-xl:w-[90%] w-5/6 mx-auto flex max-lg:flex-wrap gap-5 justify-center">
                     <div className="w-1/2 max-md:w-11/12 max-lg:w-11/12">

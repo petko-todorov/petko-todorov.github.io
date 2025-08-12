@@ -7,6 +7,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Social from './Social';
 import { useState } from 'react';
+import BlurText from './effects/BlurText';
 
 function Contact() {
     const [showPhone, setShowPhone] = useState(false);
@@ -57,11 +58,16 @@ function Contact() {
     return (
         <>
             <section id="contact" className="bg-[#2D2D2D] pt-16">
-                <div data-aos="fade-down">
-                    <h1 className="text-4xl text-white text-center gap-8">
-                        Contact
-                    </h1>
+                <div className="flex justify-center">
+                    <BlurText
+                        text="Contact"
+                        animateBy=""
+                        delay={50}
+                        className="text-4xl text-white text-center"
+                    />
+                </div>
 
+                <div data-aos="fade-down">
                     <h2 className="text-lg text-slate-300 text-center py-5 pb-8">
                         Feel free to drop me a message!
                     </h2>

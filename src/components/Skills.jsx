@@ -5,17 +5,18 @@ import {
     faGithub,
 } from '@fortawesome/free-brands-svg-icons';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
+import BlurText from './effects/BlurText';
 
 function Skills() {
     return (
         <>
             <section id="skills" className="bg-[#454C63]">
-                <h1
-                    className="text-5xl text-white text-center pt-16 pb-12 select-none"
-                    data-aos="zoom-in"
-                >
-                    Skills
-                </h1>
+                <div className="flex justify-center">
+                    <BlurText
+                        text="My Skills"
+                        className="text-5xl text-white text-center pt-16 pb-12 select-none"
+                    />
+                </div>
 
                 <div className="flex justify-center space-x-32 text-white max-lg:flex-col max-lg:items-center max-lg:space-x-0 max-lg:space-y-12">
                     <div className="flex flex-col items-center w-1/3 max-lg:w-[70%]">
