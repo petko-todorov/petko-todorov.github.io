@@ -26,9 +26,7 @@ import angularFull from '../assets/certificates/full/Angular - February 2024 - C
 import itCareerBoost from '../assets/certificates/small/it career boost.png';
 import itCareerBoostFull from '../assets/certificates/full/IT Career Booster - October 2023 - Certificate.jpeg';
 
-
 function Certificates() {
-
     const certificates = [
         {
             link: diplomaPythonWeb,
@@ -110,15 +108,14 @@ function Certificates() {
         return () => splide.destroy();
     }, []);
 
-
     return (
-        <section id="certificates" className='bg-[#333333]'>
-            <h1 className='text-4xl text-white font-semibold text-center py-10 select-none'
+        <section id="certificates" className="bg-[#333333]">
+            <h1
+                className="text-4xl text-white font-semibold text-center py-10 select-none"
                 data-aos="zoom-in"
             >
                 Certificates
             </h1>
-
 
             <div className="splide">
                 <div className="splide__track">
@@ -136,9 +133,9 @@ function Certificates() {
                     </ul>
                 </div>
             </div>
-            <div className='h-16'></div>
+            <div className="h-16"></div>
         </section>
     );
-};
+}
 
 export default Certificates;

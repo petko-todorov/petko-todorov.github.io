@@ -3,9 +3,7 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-scroll';
 import Social from './Social';
 
-
 function Home() {
-
     return (
         <>
             <section
@@ -20,15 +18,22 @@ function Home() {
                         Junior Software Developer
                     </h2>
                     <h3 className="text-xl text-[#dcdcdc] mx-auto w-11/12 lg:w-2/3 pb-10">
-                        I am Petko Todorov, certified Python and Django developer and creative designer.
-                        Passionate about design, code, and innovation. Crafting dynamic experiences with an eye for aesthetics.
+                        I am Petko Todorov, certified Python and Django
+                        developer and creative designer. Passionate about
+                        design, code, and innovation. Crafting dynamic
+                        experiences with an eye for aesthetics.
                     </h3>
 
                     <Social />
                 </div>
 
                 <div className="absolute bottom-0 left-1/2 transform text-4xl pb-10 max-md:pb-2">
-                    <Link to="about-me" smooth={true} duration={700} offset={-70}>
+                    <Link
+                        to="about-me"
+                        smooth={true}
+                        duration={700}
+                        offset={-70}
+                    >
                         <FontAwesomeIcon
                             icon={faArrowDown}
                             fade
@@ -40,7 +45,7 @@ function Home() {
                 </div>
             </section>
         </>
-    )
-};
+    );
+}
 
 export default Home;

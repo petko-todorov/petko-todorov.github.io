@@ -53,7 +53,7 @@
 
 .splide .splide__pagination__page.is-active {
     transform: scale(1.5);
-    background-color: darkorange;;
+    background-color: darkorange;
 }
 
 .splide__slide {
@@ -69,7 +69,6 @@
     .splide__slide {
         flex: 0 0 calc(40%);
     }
-
 }
 
 @media (max-width: 768px) {
