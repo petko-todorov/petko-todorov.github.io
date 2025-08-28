@@ -11,19 +11,20 @@ function Skills() {
     return (
         <>
             <section id="skills" className="bg-[#454C63]">
-                <div className="flex justify-center">
+                <div className="flex justify-center pt-16 pb-12">
                     <BlurText
                         text="My Skills"
-                        className="text-5xl text-white text-center pt-16 pb-12 select-none"
+                        className="text-5xl text-white text-center select-none cursor-target p-2"
                     />
                 </div>
 
                 <div className="flex justify-center space-x-32 text-white max-lg:flex-col max-lg:items-center max-lg:space-x-0 max-lg:space-y-12">
                     <div className="flex flex-col items-center w-1/3 max-lg:w-[70%]">
                         <div data-aos="zoom-in" data-aos-delay="100">
-                            <span className="text-5xl border-dashed border-b-2 border-yellow-500 w-[80px] flex justify-center pb-5">
+                            <span className="text-5xl w-[80px] flex justify-center cursor-target p-2">
                                 <FontAwesomeIcon icon={faPython} />
                             </span>
+                            <div className="pb-5 border-dashed border-b-2 border-yellow-500 " />
                         </div>
                         <div data-aos="fade-up" data-aos-duration="500">
                             <h2 className="text-xl font-bold pt-8 pb-3">
@@ -46,9 +47,10 @@ function Skills() {
 
                     <div className="flex flex-col items-center w-1/3 max-lg:w-[70%]">
                         <div data-aos="zoom-in" data-aos-delay="100">
-                            <span className="text-5xl border-dashed border-b-2 border-yellow-500 w-[80px] flex justify-center pb-5">
+                            <span className="text-5xl w-[80px] flex justify-center cursor-target p-2">
                                 <FontAwesomeIcon icon={faReact} />
                             </span>
+                            <div className="pb-5 border-dashed border-b-2 border-yellow-500 " />
                         </div>
                         <div data-aos="fade-up" data-aos-duration="500">
                             <h2 className="text-xl font-bold pt-8 pb-3">
@@ -72,9 +74,10 @@ function Skills() {
                 <div className="flex justify-center space-x-32 pt-12 pb-24 text-white max-lg:flex-col max-lg:items-center max-lg:space-x-0 max-lg:space-y-12">
                     <div className="flex flex-col items-center w-1/3 max-lg:w-[70%]">
                         <div data-aos="zoom-in" data-aos-delay="100">
-                            <span className="text-5xl border-dashed border-b-2 border-yellow-500 w-[80px] flex justify-center pb-5">
+                            <span className="text-5xl w-[80px] flex justify-center cursor-target p-2">
                                 <FontAwesomeIcon icon={faCode} />
                             </span>
+                            <div className="pb-5 border-dashed border-b-2 border-yellow-500 " />
                         </div>
                         <div data-aos="fade-up" data-aos-duration="500">
                             <h2 className="text-xl font-bold pt-8 pb-3">
@@ -97,9 +100,10 @@ function Skills() {
 
                     <div className="flex flex-col items-center w-1/3 max-lg:w-[70%]">
                         <div data-aos="zoom-in" data-aos-delay="100">
-                            <span className="text-5xl border-dashed border-b-2 border-yellow-500 w-[80px] flex justify-center pb-5">
+                            <span className="text-5xl w-[80px] flex justify-center cursor-target p-2">
                                 <FontAwesomeIcon icon={faGithub} />
                             </span>
+                            <div className="pb-5 border-dashed border-b-2 border-yellow-500 " />
                         </div>
                         <div data-aos="fade-up" data-aos-duration="500">
                             <h2 className="text-xl font-bold pt-8 pb-3">

@@ -62,12 +62,12 @@ function Projects() {
     return (
         <>
             <section id="projects">
-                <div className="flex justify-center">
+                <div className="flex justify-center bg-white py-10">
                     <BlurText
                         text="Projects"
                         animateBy="letters"
                         delay={50}
-                        className="text-4xl text-black text-center py-12 select-none"
+                        className="text-4xl text-black text-center select-none cursor-target p-2"
                     />
                 </div>
 
@@ -99,7 +99,7 @@ function Projects() {
                         </div>
                     ))}
                 </div>
-                <div className="pb-6"></div>
+                <div className="pb-6 bg-white"></div>
             </section>
         </>
     );

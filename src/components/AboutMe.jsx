@@ -5,10 +5,10 @@ function AboutMe() {
     return (
         <>
             <section id="about-me" className="bg-[#969696] py-[6rem] w-auto">
-                <div className="flex justify-center">
+                <div className="flex justify-center pb-10">
                     <BlurText
                         text="Who Am I"
-                        className="text-[#222222] text-5xl pb-10 select-none"
+                        className="text-[#222222] text-5xl select-none cursor-target p-2"
                     />
                 </div>
 
@@ -48,9 +48,11 @@ function AboutMe() {
                                 download="petko_todorov_cv.pdf"
                                 className="flex justify-center pt-5"
                             >
-                                <button className="text-white text-xl py-2 px-6 border border-white rounded-md shadow-[0_0_5em_transparent] hover:bg-transparent hover:shadow-[0_0_0_white] hover:transition-all hover:duration-1000 hover:ease-in-out">
-                                    Download CV
-                                </button>
+                                <div className='cursor-target p-1'>
+                                    <button className="text-white text-xl py-2 px-6 border border-white rounded-md shadow-[0_0_5em_transparent] hover:bg-transparent hover:shadow-[0_0_0_white] hover:transition-all hover:duration-1000 hover:ease-in-out">
+                                        Download CV
+                                    </button>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -58,7 +60,7 @@ function AboutMe() {
                     <div data-aos="fade-left">
                         <img
                             src={aboutImage}
-                            className="w-full max-w-[500px] max-sm:hidden h-auto object-contain max-md:order-2 rounded-2xl"
+                            className="w-full max-w-[500px] max-sm:hidden h-auto object-contain max-md:order-2 rounded-2xl cursor-target p-1"
                             alt="About Me"
                         />
                     </div>

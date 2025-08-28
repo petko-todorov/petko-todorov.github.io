@@ -55,7 +55,7 @@ function NavBar({
                 </div>
 
                 <ul className="hidden md:flex uppercase font-bold text-[#888888] flex-row justify-between items-center w-full h-20 mb-15 px-10">
-                    <div className="flex flex-1 justify-center gap-10">
+                    <div className="flex flex-1 justify-center gap-7">
                         <li
                             className={`hover:cursor-pointer select-none ${
                                 activeSection === 'home' ? 'text-[#FFB21F]' : ''
@@ -66,6 +66,7 @@ function NavBar({
                                 smooth={true}
                                 duration={700}
                                 offset={-70}
+                                className="cursor-target p-2"
                             >
                                 Home
                             </Link>
@@ -83,6 +84,7 @@ function NavBar({
                                 smooth={true}
                                 duration={700}
                                 offset={-70}
+                                className="cursor-target p-2"
                             >
                                 About me
                             </Link>
@@ -100,6 +102,7 @@ function NavBar({
                                 smooth={true}
                                 duration={700}
                                 offset={-70}
+                                className="cursor-target p-2"
                             >
                                 Skills
                             </Link>
@@ -117,6 +120,7 @@ function NavBar({
                                 smooth={true}
                                 duration={700}
                                 offset={-70}
+                                className="cursor-target p-2"
                             >
                                 Projects
                             </Link>
@@ -134,6 +138,7 @@ function NavBar({
                                 smooth={true}
                                 duration={700}
                                 offset={-70}
+                                className="cursor-target p-2"
                             >
                                 Certificates
                             </Link>
@@ -151,6 +156,7 @@ function NavBar({
                                 smooth={true}
                                 duration={700}
                                 offset={-70}
+                                className="cursor-target p-2"
                             >
                                 Contact
                             </Link>
