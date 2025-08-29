@@ -85,7 +85,7 @@ function Projects() {
                             />
                             <div className="absolute inset-x-12 inset-y-8 hover:border-2 hover:border-[#FFB21F] duration-75 rounded-xl">
                                 <a href={project.githubLink} target="_blank">
-                                    <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="absolute -inset-x-2 -inset-y-2 flex items-center justify-center cursor-target">
                                         <h3 className="text-white text-3xl max-md:text-5xl max-md:group-hover:text-6xl text-center brightness-125 font-semibold transition-all duration-300 transform translate-y-6 group-hover:translate-y-2 group-hover:text-[#FFB21F] group-hover:text-5xl relative">
                                             {project.title}
                                         </h3>

@@ -111,12 +111,12 @@ function Certificates() {
 
     return (
         <section id="certificates" className="bg-[#333333]">
-            <div className="flex justify-center">
+            <div className="flex justify-center py-10">
                 <BlurText
                     text="Certificates"
                     animateBy="letters"
                     delay={50}
-                    className="text-4xl text-white font-semibold text-center py-10 select-none"
+                    className="text-4xl text-white font-semibold text-center select-none cursor-target p-2"
                 />
             </div>
 
@@ -125,7 +125,11 @@ function Certificates() {
                     <ul className="splide__list certifications w-[66%] max-lg:w-[75%] max-md:w[77%] max-sm:w-[90%]">
                         {certificates.map((certificate, index) => (
                             <li className="splide__slide" key={index}>
-                                <a href={certificate.imgSrc} target="_blank">
+                                <a
+                                    href={certificate.imgSrc}
+                                    target="_blank"
+                                    className="cursor-target p-2"
+                                >
                                     <img
                                         src={certificate.link}
                                         alt={certificate.alt}
