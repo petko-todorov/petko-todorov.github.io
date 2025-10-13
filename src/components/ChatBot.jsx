@@ -11,6 +11,8 @@ const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const TEXT =
     import.meta.env.VITE_CHAT_BOT_TEXT1 + import.meta.env.VITE_CHAT_BOT_TEXT2;
 
+const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${GEMINI_API_KEY}`;
+
 function ChatBot({
     messages,
     setMessages,
@@ -83,28 +85,25 @@ function ChatBot({
         setConversation(updatedConversation);
 
         try {
-            const response = await fetch(
-                `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
-                {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [
-                            {
-                                role: 'user',
-                                parts: [
-                                    {
-                                        text: `Стартирай на езика ${inputLanguage} и ако не е български преведи.
+            const response = await fetch(GEMINI_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    contents: [
+                        {
+                            role: 'user',
+                            parts: [
+                                {
+                                    text: `Стартирай на езика ${inputLanguage} и ако не е български преведи.
                                     Ако е unknown преведи на езика от първата дума, също ако е число и няма текст пиши на английски, ако има текст пиши на езика на който е написан текста.
                                     ${TEXT}`,
-                                    },
-                                ],
-                            },
-                            ...updatedConversation,
-                        ],
-                    }),
-                }
-            );
+                                },
+                            ],
+                        },
+                        ...updatedConversation,
+                    ],
+                }),
+            });
             const data = await response.json();
             const aiResponse =
                 data?.candidates?.[0]?.content?.parts?.[0]?.text ||
