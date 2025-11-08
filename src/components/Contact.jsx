@@ -22,10 +22,7 @@ function Contact() {
             first_row: 'Petko Todorov',
             second_row: (
                 <>
-                    <FontAwesomeIcon
-                        icon={faLocationDot}
-                        className="cursor-target p-2"
-                    />{' '}
+                    <FontAwesomeIcon icon={faLocationDot} className="pr-2" />{' '}
                     Burgas, Bulgaria
                 </>
             ),
@@ -34,22 +31,17 @@ function Contact() {
             first_row: 'Phone',
             second_row: (
                 <>
-                    <FontAwesomeIcon
-                        icon={faMobileScreen}
-                        className="cursor-target p-2"
-                    />{' '}
+                    <FontAwesomeIcon icon={faMobileScreen} className="pr-2" />{' '}
                     <span className="pr-2">
                         {showPhone ? '+359 898 75 00 67' : '+359 *** ** ** **'}
                     </span>
-                    <div className={`p-1 ${showPhone ? '' : 'cursor-target'}`}>
-                        <button
-                            onClick={handlePhoneClick}
-                            className="border border-neutral-400 px-2 py-1 rounded-lg"
-                            disabled={showPhone}
-                        >
-                            {!showPhone ? 'Show' : 'Copied!'}
-                        </button>
-                    </div>
+                    <button
+                        onClick={handlePhoneClick}
+                        className="border border-neutral-400 px-2 py-1 rounded-lg"
+                        disabled={showPhone}
+                    >
+                        {!showPhone ? 'Show' : 'Copied!'}
+                    </button>
                 </>
             ),
         },
@@ -57,10 +49,7 @@ function Contact() {
             first_row: 'Email',
             second_row: (
                 <>
-                    <FontAwesomeIcon
-                        icon={faEnvelope}
-                        className="cursor-target p-2"
-                    />{' '}
+                    <FontAwesomeIcon icon={faEnvelope} className="pr-2" />{' '}
                     p.todorov1015@gmail.com
                 </>
             ),
@@ -75,7 +64,7 @@ function Contact() {
                         text="Contact"
                         animateBy=""
                         delay={50}
-                        className="text-4xl text-white text-center cursor-target p-2"
+                        className="text-4xl text-white text-center"
                     />
                 </div>
 
@@ -103,7 +92,7 @@ function Contact() {
                         src={footerGif}
                         alt=""
                         data-aos="zoom-in"
-                        className="w-[35%] max-sm:w-[70%] h-auto rounded-2xl cursor-target p-2"
+                        className="w-[35%] max-sm:w-[70%] h-auto rounded-2xl"
                     />
                 </div>
 
@@ -118,7 +107,7 @@ function Contact() {
                         onClick={() => {
                             window.location.reload();
                         }}
-                        className="text-[#FDB01D] cursor-target p-2"
+                        className="text-[#FDB01D]"
                     >
                         2025
                     </a>

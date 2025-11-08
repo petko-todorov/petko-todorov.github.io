@@ -116,7 +116,7 @@ function Certificates() {
                     text="Certificates"
                     animateBy="letters"
                     delay={50}
-                    className="text-4xl text-white font-semibold text-center select-none cursor-target p-2"
+                    className="text-4xl text-white font-semibold text-center select-none"
                 />
             </div>
 
@@ -125,11 +125,7 @@ function Certificates() {
                     <ul className="splide__list certifications w-[66%] max-lg:w-[75%] max-md:w[77%] max-sm:w-[90%]">
                         {certificates.map((certificate, index) => (
                             <li className="splide__slide" key={index}>
-                                <a
-                                    href={certificate.imgSrc}
-                                    target="_blank"
-                                    className="cursor-target p-2"
-                                >
+                                <a href={certificate.imgSrc} target="_blank">
                                     <img
                                         src={certificate.link}
                                         alt={certificate.alt}

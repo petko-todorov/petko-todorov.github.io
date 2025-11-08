@@ -8,7 +8,7 @@ function AboutMe() {
                 <div className="flex justify-center pb-10">
                     <BlurText
                         text="Who Am I"
-                        className="text-[#222222] text-5xl select-none cursor-target p-2"
+                        className="text-[#222222] text-5xl select-none"
                     />
                 </div>
 
@@ -48,11 +48,9 @@ function AboutMe() {
                                 download="petko_todorov_cv.pdf"
                                 className="flex justify-center pt-5"
                             >
-                                <div className='cursor-target p-1'>
-                                    <button className="text-white text-xl py-2 px-6 border border-white rounded-md shadow-[0_0_5em_transparent] hover:bg-transparent hover:shadow-[0_0_0_white] hover:transition-all hover:duration-1000 hover:ease-in-out">
-                                        Download CV
-                                    </button>
-                                </div>
+                                <button className="text-white text-xl py-2 px-6 border border-white rounded-md shadow-[0_0_5em_transparent] hover:bg-transparent hover:shadow-[0_0_0_white] hover:transition-all hover:duration-1000 hover:ease-in-out">
+                                    Download CV
+                                </button>
                             </a>
                         </div>
                     </div>
@@ -60,7 +58,7 @@ function AboutMe() {
                     <div data-aos="fade-left">
                         <img
                             src={aboutImage}
-                            className="w-full max-w-[500px] max-sm:hidden h-auto object-contain max-md:order-2 rounded-2xl cursor-target p-1"
+                            className="w-full max-w-[500px] max-sm:hidden h-auto object-contain max-md:order-2 rounded-2xl"
                             alt="About Me"
                         />
                     </div>

@@ -14,14 +14,14 @@ function Skills() {
                 <div className="flex justify-center pt-16 pb-12">
                     <BlurText
                         text="My Skills"
-                        className="text-5xl text-white text-center select-none cursor-target p-2"
+                        className="text-5xl text-white text-center select-none"
                     />
                 </div>
 
                 <div className="flex justify-center space-x-32 text-white max-lg:flex-col max-lg:items-center max-lg:space-x-0 max-lg:space-y-12">
                     <div className="flex flex-col items-center w-1/3 max-lg:w-[70%]">
                         <div data-aos="zoom-in" data-aos-delay="100">
-                            <span className="text-5xl w-[80px] flex justify-center cursor-target p-2">
+                            <span className="text-5xl w-[80px] flex justify-center">
                                 <FontAwesomeIcon icon={faPython} />
                             </span>
                             <div className="pb-5 border-dashed border-b-2 border-yellow-500 " />
@@ -47,7 +47,7 @@ function Skills() {
 
                     <div className="flex flex-col items-center w-1/3 max-lg:w-[70%]">
                         <div data-aos="zoom-in" data-aos-delay="100">
-                            <span className="text-5xl w-[80px] flex justify-center cursor-target p-2">
+                            <span className="text-5xl w-[80px] flex justify-center">
                                 <FontAwesomeIcon icon={faReact} />
                             </span>
                             <div className="pb-5 border-dashed border-b-2 border-yellow-500 " />
@@ -74,7 +74,7 @@ function Skills() {
                 <div className="flex justify-center space-x-32 pt-12 pb-24 text-white max-lg:flex-col max-lg:items-center max-lg:space-x-0 max-lg:space-y-12">
                     <div className="flex flex-col items-center w-1/3 max-lg:w-[70%]">
                         <div data-aos="zoom-in" data-aos-delay="100">
-                            <span className="text-5xl w-[80px] flex justify-center cursor-target p-2">
+                            <span className="text-5xl w-[80px] flex justify-center">
                                 <FontAwesomeIcon icon={faCode} />
                             </span>
                             <div className="pb-5 border-dashed border-b-2 border-yellow-500 " />
@@ -100,7 +100,7 @@ function Skills() {
 
                     <div className="flex flex-col items-center w-1/3 max-lg:w-[70%]">
                         <div data-aos="zoom-in" data-aos-delay="100">
-                            <span className="text-5xl w-[80px] flex justify-center cursor-target p-2">
+                            <span className="text-5xl w-[80px] flex justify-center">
                                 <FontAwesomeIcon icon={faGithub} />
                             </span>
                             <div className="pb-5 border-dashed border-b-2 border-yellow-500 " />

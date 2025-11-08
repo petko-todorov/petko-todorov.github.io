@@ -66,7 +66,6 @@ function NavBar({
                                 smooth={true}
                                 duration={700}
                                 offset={-70}
-                                className="cursor-target p-2"
                             >
                                 Home
                             </Link>
@@ -84,7 +83,6 @@ function NavBar({
                                 smooth={true}
                                 duration={700}
                                 offset={-70}
-                                className="cursor-target p-2"
                             >
                                 About me
                             </Link>
@@ -102,7 +100,6 @@ function NavBar({
                                 smooth={true}
                                 duration={700}
                                 offset={-70}
-                                className="cursor-target p-2"
                             >
                                 Skills
                             </Link>
@@ -120,7 +117,6 @@ function NavBar({
                                 smooth={true}
                                 duration={700}
                                 offset={-70}
-                                className="cursor-target p-2"
                             >
                                 Projects
                             </Link>
@@ -138,7 +134,6 @@ function NavBar({
                                 smooth={true}
                                 duration={700}
                                 offset={-70}
-                                className="cursor-target p-2"
                             >
                                 Certificates
                             </Link>
@@ -156,7 +151,6 @@ function NavBar({
                                 smooth={true}
                                 duration={700}
                                 offset={-70}
-                                className="cursor-target p-2"
                             >
                                 Contact
                             </Link>
