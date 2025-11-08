@@ -10,13 +10,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Certificates from './components/Certificates';
 import Contact from './components/Contact';
-import ChatBot from './components/ChatBot';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRobot } from '@fortawesome/free-solid-svg-icons';
-
-import chatBotGif from '../src/assets/chatbot.gif';
-import TargetCursor from './components/effects/TargetCursor';
 
 function App() {
     useEffect(() => {
@@ -55,8 +49,6 @@ function App() {
             <Projects />
             <Certificates />
             <Contact />
-
-            <TargetCursor spinDuration={3} />
         </>
     );
 }
