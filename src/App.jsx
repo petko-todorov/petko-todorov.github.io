@@ -11,7 +11,6 @@ import Projects from './components/Projects';
 import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 
-
 function App() {
     useEffect(() => {
         AOS.init({
