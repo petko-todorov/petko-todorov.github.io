@@ -1,46 +1,32 @@
 {
-    "name": "petko-todorov.github.io",
+    "name": "dev-cv",
+    "version": "0.1.0",
     "private": true,
-    "version": "0.0.0",
-    "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "lint": "eslint .",
-        "preview": "vite preview",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist"
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^6.7.2",
-        "@fortawesome/free-brands-svg-icons": "^6.7.2",
-        "@fortawesome/free-solid-svg-icons": "^6.7.2",
-        "@fortawesome/react-fontawesome": "^0.2.2",
-        "@splidejs/splide": "^4.1.4",
-        "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+        "@fortawesome/fontawesome-svg-core": "^7.2.0",
+        "@fortawesome/free-brands-svg-icons": "^7.2.0",
+        "@fortawesome/free-solid-svg-icons": "^7.2.0",
+        "@fortawesome/react-fontawesome": "^3.3.1",
         "aos": "^2.3.4",
-        "gsap": "^3.13.0",
         "hamburger-react": "^2.5.2",
-        "motion": "^12.23.12",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "react-draggable": "^4.4.6",
-        "react-scroll": "^1.9.0"
+        "next": "16.2.4",
+        "react": "19.2.4",
+        "react-dom": "19.2.4",
+        "react-scroll": "^1.9.3",
+        "three": "^0.134.0",
+        "vanta": "^0.5.24"
     },
     "devDependencies": {
-        "@eslint/js": "^9.17.0",
-        "@types/react": "^18.3.18",
-        "@types/react-dom": "^18.3.5",
-        "@vitejs/plugin-react": "^4.3.4",
-        "autoprefixer": "^10.4.20",
-        "eslint": "^9.17.0",
-        "eslint-plugin-react": "^7.37.2",
-        "eslint-plugin-react-hooks": "^5.0.0",
-        "eslint-plugin-react-refresh": "^0.4.16",
-        "gh-pages": "^6.3.0",
-        "globals": "^15.14.0",
-        "postcss": "^8.4.49",
-        "tailwindcss": "^3.4.17",
-        "vite": "^6.0.5"
+        "@tailwindcss/postcss": "^4",
+        "babel-plugin-react-compiler": "1.0.0",
+        "eslint": "^9",
+        "eslint-config-next": "16.2.4",
+        "tailwindcss": "^4"
     }
 }
