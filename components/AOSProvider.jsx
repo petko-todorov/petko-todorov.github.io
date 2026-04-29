@@ -8,7 +8,8 @@ export default function AOSProvider({ children }) {
     useEffect(() => {
         AOS.init({
             duration: 1000,
-            once: true,
+            once: false,
+            mirror: true,
             easing: 'ease-out-cubic',
         });
     }, []);
