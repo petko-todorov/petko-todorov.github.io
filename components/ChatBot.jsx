@@ -71,6 +71,7 @@ export default function ChatBot({ setModalOpen }) {
 
         return text.replace(urlRegex, (url) => {
             const cleanUrl = url.replace(/[.,;:!?)]$/, '');
+            
             const punctuation =
                 url.length > cleanUrl.length ? url.slice(-1) : '';
 
