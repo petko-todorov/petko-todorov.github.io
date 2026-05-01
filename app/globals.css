@@ -11,3 +11,23 @@
         @apply bg-white text-black dark:bg-black dark:text-white;
     }
 }
+
+.splide .splide__pagination {
+    position: relative;
+    margin-top: 2.5em;
+}
+
+.splide .splide__pagination li {
+    width: 25px;
+}
+
+.splide .splide__pagination button {
+    width: 15px;
+    height: 15px;
+    background-color: #bcedff;
+}
+
+.splide .splide__pagination__page.is-active {
+    transform: scale(1.5);
+    background-color: #80b3c4;
+}
