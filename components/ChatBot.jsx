@@ -4,13 +4,13 @@ import { useState, useEffect, useRef } from 'react';
 import Draggable from 'react-draggable';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
-import { useStore } from '@/store/useStore'; 
+import { faXmark, faRobot } from '@fortawesome/free-solid-svg-icons';
+import { useStore } from '@/store/useStore';
 
-const botImage = '/bot.jpg';
-const userImage = '/user.jpg';
-const sendImage = '/send.png';
-const loadingGif = '/loading.gif';
+const botImage = '/chatbot/bot.jpg';
+const userImage = '/chatbot/user.jpg';
+const sendImage = '/chatbot/send.png';
+const loadingGif = '/chatbot/loading.gif';
 
 export default function ChatBot({ setModalOpen }) {
     const {
@@ -71,7 +71,7 @@ export default function ChatBot({ setModalOpen }) {
 
         return text.replace(urlRegex, (url) => {
             const cleanUrl = url.replace(/[.,;:!?)]$/, '');
-            
+
             const punctuation =
                 url.length > cleanUrl.length ? url.slice(-1) : '';
 
@@ -142,20 +142,27 @@ export default function ChatBot({ setModalOpen }) {
             <div
                 ref={nodeRef}
                 id="messages-container"
-                className="font-sans mx-auto mt-0 flex flex-col fixed top-20 right-32 w-[90%] max-w-md h-125 bg-white rounded-3xl shadow-2xl z-50 max-lg:top-13 max-lg:bottom-0 max-lg:left-0 max-lg:right-0"
+                className="font-sans mx-auto mt-0 flex flex-col fixed top-20 right-32 w-[90%] max-w-md h-125 rounded-xl border-2 border-[#BCEDFF] shadow-2xl z-50 max-lg:top-13 max-lg:bottom-0 max-lg:left-0 max-lg:right-0"
             >
-                <div className="drag-handle cursor-move flex justify-center items-center text-black bg-white rounded-t-xl border-b">
-                    <h1 className="text-xl font-bold m-3 select-none grow text-center">
-                        PersonalBot Chat
-                    </h1>
+                <div className="drag-handle cursor-move flex justify-between items-center text-black bg-[#00335E] rounded-t-xl border-b px-3">
+                    <div className="flex justify-start items-center">
+                        <FontAwesomeIcon
+                            icon={faRobot}
+                            className="text-[#84deff]"
+                        />
+                        <h1 className="text-2xl text-[#BCEDFF] font-bold m-3 select-none grow text-center">
+                            PersonalBot
+                        </h1>
+                    </div>
+
                     <FontAwesomeIcon
                         onClick={() => setModalOpen(false)}
-                        icon={faCircleXmark}
-                        className="text-red-500 text-3xl mr-6 cursor-pointer hover:text-red-600 transition-colors"
+                        icon={faXmark}
+                        className="text-red-500 text-2xl mr- rounded-full cursor-pointer hover:text-red-600 hover:bg-red-100 transition-colors"
                     />
                 </div>
 
-                <div className="overflow-y-auto grow p-4 space-y-4 bg-gray-50">
+                <div className="overflow-y-auto grow p-4 space-y-4 bg-[#08213b]">
                     {messages.map((msg, index) => (
                         <div
                             key={index}
@@ -194,6 +201,7 @@ export default function ChatBot({ setModalOpen }) {
                             </div>
                         </div>
                     ))}
+
                     {loading && (
                         <div className="flex justify-start items-center gap-2">
                             <Image
@@ -201,6 +209,7 @@ export default function ChatBot({ setModalOpen }) {
                                 alt="Loading"
                                 width={24}
                                 height={24}
+                                unoptimized
                                 className="h-6 w-auto"
                             />
                             <span className="text-xs text-gray-500 italic">
@@ -211,7 +220,7 @@ export default function ChatBot({ setModalOpen }) {
                     <div ref={messagesEndRef} />
                 </div>
 
-                <div className="p-4 bg-white text-black border-t rounded-b-3xl">
+                <div className="p-4 bg-[#00335E] text-black border-t rounded-b-xl">
                     <form
                         onSubmit={(e) => {
                             e.preventDefault();
@@ -222,7 +231,7 @@ export default function ChatBot({ setModalOpen }) {
                         <input
                             type="text"
                             ref={inputRef}
-                            className="grow p-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
+                            className="grow p-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm text-white"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             placeholder="Type a message..."
@@ -230,14 +239,14 @@ export default function ChatBot({ setModalOpen }) {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="p-2 hover:scale-110 transition-transform disabled:opacity-50"
+                            className="p-2 transition-transform disabled:opacity-50"
                         >
                             <Image
                                 src={sendImage}
                                 alt="Send"
                                 width={24}
                                 height={24}
-                                className="w-6 h-auto"
+                                className="w-6 h-auto cursor-pointer"
                             />
                         </button>
                     </form>
