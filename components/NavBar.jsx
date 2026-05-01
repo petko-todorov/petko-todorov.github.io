@@ -12,20 +12,14 @@ import {
     faCertificate,
     faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
-// import ChatBot from './ChatBot';
+import ChatBot from './ChatBot';
 
-export default function NavBar({
-    modalOpen,
-    setModalOpen,
-    modalPosition,
-    setModalPosition,
-    messages,
-    setMessages,
-    conversation,
-    setConversation,
-}) {
+const chatBotImage = '/chatbot/chatbot.gif';
+
+export default function NavBar() {
     const [activeSection, setActiveSection] = useState('home');
     const [isOpen, setOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
         const sections = document.querySelectorAll('section');
@@ -55,19 +49,20 @@ export default function NavBar({
                     >
                         <span className="lg:block text-wh">
                             <Image
-                                src="/chatbot.gif"
-                                alt="Chatbot"
-                                width={0}
-                                height={0}
+                                src={chatBotImage}
+                                alt="Test"
+                                width={20}
+                                height={20}
                                 className="w-10"
+                                unoptimized
                             />
                         </span>
                     </button>
                     <Hamburger toggled={isOpen} toggle={setOpen} />
                 </div>
 
-                <ul className="hidden md:flex uppercase font-bold flex-row justify-between items-center w-full h-20 px-10">
-                    <div className="flex flex-1 justify-center gap-7">
+                <div className="hidden md:flex uppercase font-bold flex-row justify-between items-center w-full h-20 px-10">
+                    <ul className="flex flex-1 justify-center gap-7">
                         <li
                             className={`hover:cursor-pointer select-none ${
                                 activeSection === 'home' ? 'text-[#00E5FF]' : ''
@@ -165,26 +160,27 @@ export default function NavBar({
                                 Contact
                             </Link>
                         </li>
-                    </div>
+                    </ul>
 
-                    <li className="ml-auto">
+                    <div className="ml-auto">
                         <button
                             className="text-white py-0 bg-transparent select-none"
                             onClick={() => setModalOpen((prev) => !prev)}
                         >
                             <span className="lg:block">
                                 <Image
-                                    src="/chatbot.gif"
+                                    src={chatBotImage}
                                     width={11}
                                     height={11}
                                     alt="Chatbot"
                                     className="w-11"
+                                    unoptimized
                                 />
                             </span>
                         </button>
-                    </li>
+                    </div>
                     <div className="bg-linear-to-r from-transparent via-[#00E5FF]/30 to-transparent h-px bottom-0 absolute left-0 w-full"></div>
-                </ul>
+                </div>
 
                 {/* hamburger */}
                 <ul
@@ -254,17 +250,7 @@ export default function NavBar({
                 </ul>
             </nav>
 
-            {modalOpen && (
-                <ChatBot
-                    messages={messages}
-                    setMessages={setMessages}
-                    conversation={conversation}
-                    setConversation={setConversation}
-                    setModalOpen={setModalOpen}
-                    modalPosition={modalPosition}
-                    setModalPosition={setModalPosition}
-                />
-            )}
+            {modalOpen && <ChatBot setModalOpen={setModalOpen} />}
         </>
     );
 }
