@@ -12,6 +12,8 @@ import {
 
 import Social from './Social';
 
+const footerImage = '/footer-burgas.png';
+
 function Contact() {
     const [showPhone, setShowPhone] = useState(false);
 
@@ -45,7 +47,7 @@ function Contact() {
                         {showPhone ? (
                             <a
                                 href="tel:+359898750067"
-                                className="border-b border-[#81ECFF] hover:text-[#81ECFF]"
+                                className="border-b border-transparent hover:border-[#81ECFF] transition-colors duration-300"
                             >
                                 +359 898 75 00 67
                             </a>
@@ -72,7 +74,12 @@ function Contact() {
                         icon={faEnvelope}
                         className="text-[#81ECFF] bg-[#001d25] py-2.5 px-2 rounded-xl mr-2"
                     />
-                    <span>p.todorov1015@gmail.com</span>
+                    <a
+                        href="mailto:p.todorov1015@gmail.com"
+                        className="border-b border-transparent hover:border-[#81ECFF] transition-colors duration-300"
+                    >
+                        p.todorov1015@gmail.com
+                    </a>
                 </>
             ),
         },
@@ -80,7 +87,7 @@ function Contact() {
 
     return (
         <>
-            <section id="contact" className="bg-[#001016]">
+            <section id="contact" className="bg-[#001016] overflow-hidden">
                 <div className="flex justify-center">
                     <h1
                         data-aos="fade-down"
@@ -98,7 +105,7 @@ function Contact() {
                 </h2>
 
                 <div className="flex justify-center items-center flex-wrap gap-10 mx-5">
-                    <div data-aos="fade-righ" className="mb-10 text-xl flex-">
+                    <div data-aos="fade-right" className="mb-10 text-xl flex-">
                         {data.map((item, index) => (
                             <div key={index}>
                                 <h1 className="text-[#80B3C4] pt-10">
@@ -112,10 +119,11 @@ function Contact() {
                     </div>
 
                     <Image
-                        src="/burgas.png"
+                        src={footerImage}
                         alt="burgas"
                         width={300}
                         height={300}
+                        loading="eager"
                         data-aos="zoom-in"
                         className="w-[22%] max-lg:w-[35%] max-sm:w-[70%] h-[70%] rounded-2xl"
                     />
