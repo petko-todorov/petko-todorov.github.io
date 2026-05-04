@@ -46,7 +46,7 @@ function Skills() {
 
     return (
         <>
-            <section id="skills" className="bg-[#00161D] overflow-hidden">
+            <section id="skills" className="bg-[#001521] overflow-hidden">
                 <h1
                     data-aos="fade-down"
                     className="text-5xl text-center text-[#BCEDFF] pt-16 pb-12"
