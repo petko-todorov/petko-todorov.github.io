@@ -8,7 +8,7 @@ import {
 
 export default function Social() {
     return (
-        <div className="pt-14 text-2xl flex justify-center">
+        <section className="pt-14 text-2xl flex justify-center">
             <ul className="flex justify-center space-x-3">
                 <li data-aos="zoom-in" data-aos-delay="100">
                     <a
@@ -50,6 +50,6 @@ export default function Social() {
                     </a>
                 </li>
             </ul>
-        </div>
+        </section>
     );
 }
