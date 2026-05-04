@@ -141,7 +141,7 @@ function Certificates() {
     }, []);
 
     return (
-        <section id="certificates" className="bg-[#00161D] overflow-hidden">
+        <section id="certificates" className="bg-[#00283c] overflow-hidden">
             <h1
                 className="text-5xl text-center text-[#BCEDFF] pt-20 pb-12"
                 data-aos="fade-down"
@@ -163,7 +163,7 @@ function Certificates() {
                                     <img
                                         src={cert.link}
                                         alt={cert.alt}
-                                        className="w-full h-auto rounded-2xl shadow-md border-2 border-[#BCEDFF]"
+                                        className="w-full h-auto rounded-2xl shadow-md border-2 border-[#BCEDFF] brightness-90"
                                     />
                                 </a>
                             </li>
