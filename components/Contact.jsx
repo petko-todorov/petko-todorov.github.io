@@ -29,7 +29,7 @@ function Contact() {
                 <>
                     <FontAwesomeIcon
                         icon={faLocationDot}
-                        className="text-[#81ECFF] bg-[#001d25] py-2.5 px-2 rounded-xl mr-2"
+                        className="text-[#81ECFF] bg-[#001016] py-2.5 px-2 rounded-xl mr-2"
                     />
                     Burgas, Bulgaria
                 </>
@@ -41,7 +41,7 @@ function Contact() {
                 <>
                     <FontAwesomeIcon
                         icon={faMobileScreen}
-                        className="text-[#81ECFF] bg-[#001d25] py-2.5 px-2 rounded-xl mr-2"
+                        className="text-[#81ECFF] bg-[#001016] py-2.5 px-2 rounded-xl mr-2"
                     />
                     <span className="pr-2">
                         {showPhone ? (
@@ -72,7 +72,7 @@ function Contact() {
                 <>
                     <FontAwesomeIcon
                         icon={faEnvelope}
-                        className="text-[#81ECFF] bg-[#001d25] py-2.5 px-2 rounded-xl mr-2"
+                        className="text-[#81ECFF] bg-[#001016] py-2.5 px-2 rounded-xl mr-2"
                     />
                     <a
                         href="mailto:p.todorov1015@gmail.com"
@@ -87,15 +87,13 @@ function Contact() {
 
     return (
         <>
-            <section id="contact" className="bg-[#001016] overflow-hidden">
-                <div className="flex justify-center">
-                    <h1
-                        data-aos="fade-down"
-                        className="text-5xl text-center text-[#BCEDFF] pt-12"
-                    >
-                        Contact
-                    </h1>
-                </div>
+            <section id="contact" className="bg-[#001521] overflow-hidden">
+                <h1
+                    data-aos="fade-down"
+                    className="text-5xl text-center text-[#BCEDFF] pt-12"
+                >
+                    Contact
+                </h1>
 
                 <h2
                     className="text-lg text-slate-300 text-center py-5 pb-8"
@@ -105,18 +103,23 @@ function Contact() {
                 </h2>
 
                 <div className="flex justify-center items-center flex-wrap gap-10 mx-5">
-                    <div data-aos="fade-right" className="mb-10 text-xl flex-">
-                        {data.map((item, index) => (
-                            <div key={index}>
-                                <h1 className="text-[#80B3C4] pt-10">
-                                    {item.first_row}
-                                </h1>
-                                <h2 className="text-[#BCEDFF] flex items-center">
-                                    {item.second_row}
-                                </h2>
-                            </div>
-                        ))}
-                    </div>
+                    <article
+                        className="flex flex-col items-center bg-[#122131] space-y-6 border-2 border-gray-700 py-8 px-10 rounded-xl md:w-[50%] lg:w-1/3 max-sm:w-[98%]"
+                        data-aos="fade-right"
+                    >
+                        <div className="mb-10 text-xl">
+                            {data.map((item, index) => (
+                                <div key={index}>
+                                    <h1 className="text-[#80B3C4] pt-10">
+                                        {item.first_row}
+                                    </h1>
+                                    <h2 className="text-[#BCEDFF] flex items-center">
+                                        {item.second_row}
+                                    </h2>
+                                </div>
+                            ))}
+                        </div>
+                    </article>
 
                     <Image
                         src={footerImage}
@@ -125,7 +128,7 @@ function Contact() {
                         height={300}
                         loading="eager"
                         data-aos="zoom-in"
-                        className="w-[22%] max-lg:w-[35%] max-sm:w-[70%] h-[70%] rounded-2xl"
+                        className="w-[22%] max-lg:w-[35%] max-sm:w-[70%] h-[70%] rounded-2xl border-2 border-gray-700"
                     />
                 </div>
 
