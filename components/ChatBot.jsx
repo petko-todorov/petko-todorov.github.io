@@ -157,8 +157,9 @@ export default function ChatBot({ setModalOpen }) {
 
                     <FontAwesomeIcon
                         onClick={() => setModalOpen(false)}
+                        onTouchEnd={() => setModalOpen(false)}
                         icon={faXmark}
-                        className="text-red-500 text-2xl mr- rounded-full cursor-pointer hover:text-red-600 hover:bg-red-100 transition-colors"
+                        className="text-red-500 text-2xl rounded-full cursor-pointer hover:text-red-600 hover:bg-red-100 transition-colors"
                     />
                 </div>
 
