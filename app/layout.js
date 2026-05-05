@@ -21,6 +21,9 @@ export const metadata = {
     title: 'Petko Todorov | Portfolio',
     description:
         'Full Stack Developer portfolio of Petko Todorov - skills, projects, certificates and contact',
+    verification: {
+        google: 'TysWMJ2dLbARfIDRTz5XY-0Wve8anFpBQJHRKOEZYG0',
+    },
 };
 
 export default function RootLayout({ children }) {
