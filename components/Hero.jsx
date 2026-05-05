@@ -51,11 +51,12 @@ export default function Hero() {
 
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 text-4xl pb-10 max-md:pb-2">
                         <Link
-                            to="about-me"
+                            to="skills"
                             smooth={true}
                             duration={700}
                             offset={-70}
                             className="cursor-pointer"
+                            spy={true}
                         >
                             <FontAwesomeIcon
                                 icon={faArrowDown}
