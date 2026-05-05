@@ -24,21 +24,30 @@ export default function NavBar() {
         <>
             <nav className="sticky top-0 bg-[#002036] shadow-2x z-40">
                 <div className="md:hidden flex justify-between p-4 text-[#00E5FF]">
-                    <button
-                        className="px-0 py-0 bg-transparent shadow-none select-none"
-                        onClick={() => setModalOpen((prev) => !prev)}
-                    >
-                        <span className="lg:block text-wh">
-                            <Image
-                                src={chatBotImage}
-                                alt="Test"
-                                width={20}
-                                height={20}
-                                className="w-10"
-                                unoptimized
-                            />
-                        </span>
-                    </button>
+                    <div className='flex items-center gap-2'>
+                        <button
+                            className="px-0 py-0 bg-transparent shadow-none select-none"
+                            onClick={() => setModalOpen((prev) => !prev)}
+                        >
+                            <span className="lg:block text-wh">
+                                <Image
+                                    src={chatBotImage}
+                                    alt="Test"
+                                    width={20}
+                                    height={20}
+                                    className="w-10"
+                                    unoptimized
+                                />
+                            </span>
+                        </button>
+                        <a
+                            href="/petko_todorov_cv.pdf"
+                            download="petko_todorov_cv.pdf"
+                            className="text-[#00E5FF] text-sm py-2 px-6 border border-[#00E5FF] rounded-md shadow-[0_0_2em_transparent]"
+                        >
+                            Download CV
+                        </a>
+                    </div>
                     <Hamburger toggled={isOpen} toggle={setOpen} />
                 </div>
 
@@ -132,11 +141,11 @@ export default function NavBar() {
                         </li>
                     </ul>
 
-                    <div className="absolute right-10 flex items-center gap-2">
+                    <div className="absolute lg:right-10 md:right-2 flex items-center gap-2">
                         <a
                             href="/petko_todorov_cv.pdf"
                             download="petko_todorov_cv.pdf"
-                            className="text-white text-xl py-2 px-6 border border-white rounded-md shadow-[0_0_2em_transparent] hover:bg-transparent hover:shadow-[0_0_0_white] hover:transition-all hover:text-[#00C7E3] hover:border-[#00C7E3] hover:duration-700 hover:ease-in-out duration-300 ease-in-out"
+                            className="text-white lg:text-xl md:text-xs md:px-3 py-2 px-6 border border-white rounded-md shadow-[0_0_2em_transparent] hover:bg-transparent hover:shadow-[0_0_0_white] hover:transition-all hover:text-[#00C7E3] hover:border-[#00C7E3] hover:duration-700 hover:ease-in-out duration-300 ease-in-out"
                         >
                             Download CV
                         </a>
