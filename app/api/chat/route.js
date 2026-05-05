@@ -5,6 +5,7 @@ export async function POST(req) {
         const { conversation, inputLanguage } = await req.json();
 
         const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+        const GEMINI_MODEL = process.env.GEMINI_MODEL;
         const SYSTEM_PROMPT =
             (process.env.CHAT_BOT_TEXT1 || '') +
             (process.env.CHAT_BOT_TEXT2 || '') +
@@ -20,7 +21,7 @@ LANGUAGE LOGIC:
 - Always match the user's language unless specified otherwise.
 `;
 
-        const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${GEMINI_API_KEY}`;
+        const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
         const response = await fetch(GEMINI_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
