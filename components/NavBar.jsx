@@ -17,27 +17,8 @@ import ChatBot from './ChatBot';
 const chatBotImage = '/chatbot/chatbot.gif';
 
 export default function NavBar() {
-    const [activeSection, setActiveSection] = useState('home');
     const [isOpen, setOpen] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
-
-    useEffect(() => {
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
-            },
-            { threshold: [0.6] },
-        );
-
-        sections.forEach((section) => observer.observe(section));
-
-        return () => observer.disconnect();
-    }, []);
 
     return (
         <>
@@ -61,38 +42,36 @@ export default function NavBar() {
                     <Hamburger toggled={isOpen} toggle={setOpen} />
                 </div>
 
-                <div className="hidden md:flex uppercase font-bold flex-row justify-between items-center w-full h-20 px-10">
+                <div className="relative hidden md:flex uppercase font-bold flex-row justify-between items-center w-full h-20 px-10">
+                    <div></div>
+
                     <ul className="flex flex-1 justify-center gap-7">
-                        <li
-                            className={`hover:cursor-pointer select-none ${
-                                activeSection === 'home' ? 'text-[#00E5FF]' : ''
-                            }`}
-                        >
+                        <li className="hover:cursor-pointer select-none text-white">
                             <Link
                                 to="home"
+                                spy={true}
                                 smooth={true}
+                                // offset={-70}
                                 duration={700}
-                                offset={-70}
+                                activeClass="text-[#00E5FF]"
+                                className="transition-colors"
                             >
                                 <div className="text-center">
                                     <FontAwesomeIcon icon={faBolt} />
                                 </div>
-                                <span>Home</span>
+                                Home
                             </Link>
                         </li>
 
-                        <li
-                            className={`hover:cursor-pointer select-none ${
-                                activeSection === 'skills'
-                                    ? 'text-[#00E5FF]'
-                                    : ''
-                            }`}
-                        >
+                        <li className="hover:cursor-pointer select-none text-white">
                             <Link
                                 to="skills"
+                                spy={true}
                                 smooth={true}
-                                duration={700}
                                 offset={-70}
+                                duration={700}
+                                activeClass="text-[#00E5FF]"
+                                className="transition-colors"
                             >
                                 <div className="text-center">
                                     <FontAwesomeIcon icon={faLayerGroup} />
@@ -101,18 +80,15 @@ export default function NavBar() {
                             </Link>
                         </li>
 
-                        <li
-                            className={`hover:cursor-pointer select-none ${
-                                activeSection === 'projects'
-                                    ? 'text-[#00E5FF]'
-                                    : ''
-                            }`}
-                        >
+                        <li className="hover:cursor-pointer select-none text-white">
                             <Link
                                 to="projects"
+                                spy={true}
                                 smooth={true}
-                                duration={700}
                                 offset={-70}
+                                duration={700}
+                                activeClass="text-[#00E5FF]" // Библиотеката сама ще сложи този цвят
+                                className="transition-colors"
                             >
                                 <div className="text-center">
                                     <FontAwesomeIcon icon={faCodeBranch} />
@@ -121,18 +97,15 @@ export default function NavBar() {
                             </Link>
                         </li>
 
-                        <li
-                            className={`hover:cursor-pointer select-none ${
-                                activeSection === 'certificates'
-                                    ? 'text-[#00E5FF]'
-                                    : ''
-                            }`}
-                        >
+                        <li className="hover:cursor-pointer select-none text-white">
                             <Link
                                 to="certificates"
+                                spy={true}
                                 smooth={true}
-                                duration={700}
                                 offset={-70}
+                                duration={700}
+                                activeClass="text-[#00E5FF]"
+                                className="transition-colors"
                             >
                                 <div className="text-center">
                                     <FontAwesomeIcon icon={faCertificate} />
@@ -141,18 +114,15 @@ export default function NavBar() {
                             </Link>
                         </li>
 
-                        <li
-                            className={`hover:cursor-pointer select-none ${
-                                activeSection === 'contact'
-                                    ? 'text-[#00E5FF]'
-                                    : ''
-                            }`}
-                        >
+                        <li className="hover:cursor-pointer select-none text-white">
                             <Link
                                 to="contact"
+                                spy={true}
                                 smooth={true}
-                                duration={700}
                                 offset={-70}
+                                duration={700}
+                                activeClass="text-[#00E5FF]"
+                                className="transition-colors"
                             >
                                 <div className="text-center">
                                     <FontAwesomeIcon icon={faEnvelope} />
@@ -162,23 +132,30 @@ export default function NavBar() {
                         </li>
                     </ul>
 
-                    <div className="ml-auto">
-                        <button
-                            className="text-white py-0 bg-transparent select-none"
+                    <div className="absolute right-10 flex items-center gap-2">
+                        <a
+                            href="/petko_todorov_cv.pdf"
+                            download="petko_todorov_cv.pdf"
+                            className="text-white text-xl py-2 px-6 border border-white rounded-md shadow-[0_0_2em_transparent] hover:bg-transparent hover:shadow-[0_0_0_white] hover:transition-all hover:text-[#00C7E3] hover:border-[#00C7E3] hover:duration-700 hover:ease-in-out duration-300 ease-in-out"
+                        >
+                            Download CV
+                        </a>
+
+                        <div
+                            className="cursor-pointer"
                             onClick={() => setModalOpen((prev) => !prev)}
                         >
-                            <span className="lg:block">
-                                <Image
-                                    src={chatBotImage}
-                                    width={11}
-                                    height={11}
-                                    alt="Chatbot"
-                                    className="w-11"
-                                    unoptimized
-                                />
-                            </span>
-                        </button>
+                            <Image
+                                src={chatBotImage}
+                                width={44}
+                                height={44}
+                                alt="Chatbot"
+                                className="w-11"
+                                unoptimized
+                            />
+                        </div>
                     </div>
+
                     <div className="bg-linear-to-r from-transparent via-[#00E5FF]/30 to-transparent h-px bottom-0 absolute left-0 w-full"></div>
                 </div>
 
