@@ -87,7 +87,7 @@ function Projects() {
                     Projects
                 </h1>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl gap-3 mx-auto px-4 lg:gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl gap-3 mx-auto px-15 md:px-10 lg:px-5 lg:gap-3">
                     {projects.map((project, index) => (
                         <article
                             className="bg-[#122131] rounded-2xl overflow-hidden border border-gray-700"
