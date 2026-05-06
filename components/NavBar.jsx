@@ -24,7 +24,7 @@ export default function NavBar() {
         <>
             <nav className="sticky top-0 bg-[#002036] shadow-2x z-40">
                 <div className="md:hidden flex justify-between p-4 text-[#00E5FF]">
-                    <div className='flex items-center gap-2'>
+                    <div className="flex items-center gap-2">
                         <button
                             className="px-0 py-0 bg-transparent shadow-none select-none"
                             onClick={() => setModalOpen((prev) => !prev)}
@@ -51,8 +51,14 @@ export default function NavBar() {
                     <Hamburger toggled={isOpen} toggle={setOpen} />
                 </div>
 
-                <div className="relative hidden md:flex uppercase font-bold flex-row justify-between items-center w-full h-20 px-10">
-                    <div></div>
+                <div className="relative hidden md:flex uppercase font-bold flex-row justify-between items-center w-full h-20 lg:px-10 md:px-5">
+                    <a
+                        href="/petko_todorov_cv.pdf"
+                        download="petko_todorov_cv.pdf"
+                        className="text-white lg:text-xl md:text-xs md:px-3 py-2 px-6 border border-white rounded-md shadow-[0_0_2em_transparent] hover:bg-transparent hover:shadow-[0_0_0_white] hover:transition-all hover:text-[#00C7E3] hover:border-[#00C7E3] hover:duration-700 hover:ease-in-out duration-300 ease-in-out"
+                    >
+                        Download CV
+                    </a>
 
                     <ul className="flex flex-1 justify-center gap-7">
                         <li className="hover:cursor-pointer select-none text-white">
@@ -141,28 +147,18 @@ export default function NavBar() {
                         </li>
                     </ul>
 
-                    <div className="absolute lg:right-10 md:right-2 flex items-center gap-2">
-                        <a
-                            href="/petko_todorov_cv.pdf"
-                            download="petko_todorov_cv.pdf"
-                            className="text-white lg:text-xl md:text-xs md:px-3 py-2 px-6 border border-white rounded-md shadow-[0_0_2em_transparent] hover:bg-transparent hover:shadow-[0_0_0_white] hover:transition-all hover:text-[#00C7E3] hover:border-[#00C7E3] hover:duration-700 hover:ease-in-out duration-300 ease-in-out"
-                        >
-                            Download CV
-                        </a>
-
-                        <div
-                            className="cursor-pointer"
-                            onClick={() => setModalOpen((prev) => !prev)}
-                        >
-                            <Image
-                                src={chatBotImage}
-                                width={44}
-                                height={44}
-                                alt="Chatbot"
-                                className="w-11"
-                                unoptimized
-                            />
-                        </div>
+                    <div
+                        className="cursor-pointer"
+                        onClick={() => setModalOpen((prev) => !prev)}
+                    >
+                        <Image
+                            src={chatBotImage}
+                            width={44}
+                            height={44}
+                            alt="Chatbot"
+                            className="w-11"
+                            unoptimized
+                        />
                     </div>
 
                     <div className="bg-linear-to-r from-transparent via-[#00E5FF]/30 to-transparent h-px bottom-0 absolute left-0 w-full"></div>
