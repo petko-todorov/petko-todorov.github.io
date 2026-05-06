@@ -107,8 +107,11 @@ export default function ChatBot({ setModalOpen }) {
             });
 
             const data = await response.json();
+            // const aiResponse =
+            //     data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+            //     'Error processing request.';
             const aiResponse =
-                data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+                data?.choices?.[0]?.message?.content ||
                 'Error processing request.';
             const formattedResponse = formatUrls(aiResponse);
 
