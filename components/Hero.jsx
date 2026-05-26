@@ -25,8 +25,8 @@ export default function Hero() {
                             data-aos="fade-left"
                             className="text-4xl font-bold uppercase"
                         >
-                            Hi, I am
-                            <span className="pl-2 text-transparent text-l bg-clip-text bg-linear-to-r from-white to-[#00E5FF]">
+                            Hi, I am{' '}
+                            <span className="pl-2 text-transparent bg-clip-text bg-linear-to-r from-white to-[#00E5FF]">
                                 PETKO
                             </span>
                         </h1>
